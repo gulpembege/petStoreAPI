@@ -26,8 +26,7 @@ public class UpdateTests extends SpecPetStore {
         // prepare endpoint with specurl
         specPetStore.pathParam("pp1","pet");
 
-        // prepare endpoint with specurl
-        specPetStore.pathParam("pp1","pet");
+
 
         // prepare pojo datas
         PojoCategory category = new PojoCategory(2,"cats");
