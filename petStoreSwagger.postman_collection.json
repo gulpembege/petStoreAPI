@@ -1,0 +1,346 @@
+{
+	"info": {
+		"_postman_id": "27ab7282-7ff1-46a8-bf3b-d81abaab1be8",
+		"name": "petStoreSwagger",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37955292"
+	},
+	"item": [
+		{
+			"name": "get01",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/pet/findByStatus?status=sold",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"pet",
+						"findByStatus"
+					],
+					"query": [
+						{
+							"key": "status",
+							"value": "sold"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get02",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/pet/9",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"pet",
+						"9"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get03",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {\r",
+							"    pm.response.to.have.status(404);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/pet/0",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"pet",
+						"0"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "post01",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id\": 3,\r\n  \"category\": {\r\n    \"id\": 2,\r\n    \"name\": 12\r\n  },\r\n  \"name\": \"umus\",\r\n  \"photoUrls\": [\r\n    \"asd\"\r\n  ],\r\n  \"tags\": [\r\n    {\r\n      \"id\": 2,\r\n      \"name\": \"asd\"\r\n    }\r\n  ],\r\n  \"status\": \"sold\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/pet",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"pet"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "post02",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"contentType": "image/jpeg",
+							"type": "file",
+							"src": "/C:/Users/Toshiba/Desktop/4d44823306b8de27a24a200f8c2730a4.jpg"
+						},
+						{
+							"key": "additionalMetadata",
+							"value": "asd",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://petstore.swagger.io/v2/pet/9/uploadImage",
+					"protocol": "https",
+					"host": [
+						"petstore",
+						"swagger",
+						"io"
+					],
+					"path": [
+						"v2",
+						"pet",
+						"9",
+						"uploadImage"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "put01",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id\": 4,\r\n  \"category\": {\r\n    \"id\": 0,\r\n    \"name\": \"asd\"\r\n  },\r\n  \"name\": 123,\r\n  \"photoUrls\": [\r\n    \"string\"\r\n  ],\r\n  \"tags\": [\r\n    {\r\n      \"id\": 0,\r\n      \"name\": \"string\"\r\n    }\r\n  ],\r\n  \"status\": \"asd\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/pet",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"pet"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "del01",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/pet/9",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"pet",
+						"9"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "del02",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {\r",
+							"    pm.response.to.have.status(404);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/pet/9999",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"pet",
+						"9999"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "https://petstore.swagger.io/v2",
+			"type": "string"
+		}
+	]
+}

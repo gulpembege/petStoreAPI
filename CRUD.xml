@@ -1,0 +1,44 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<!--
+        Let's run a CRUD test with xml file
+
+       -->
+
+
+
+<suite name="CRUD">
+    <listeners>
+        <listener class-name="io.qameta.allure.testng.AllureTestNg"/>
+    </listeners>
+
+    <test name="Create,Read,Update and Delete pet same time">
+
+        <classes>
+            <class name="tests.CreateTests">
+                <methods>
+                    <include name="post01"></include>
+                </methods>
+            </class>
+            <class name="tests.ReadTests">
+                <methods>
+                    <include name="get02"></include>
+                </methods>
+            </class>
+            <class name="tests.UpdateTests">
+                <methods>
+                    <include name="put01"></include>
+                </methods>
+            </class>
+            <class name="tests.DeleteTests">
+                <methods>
+                    <include name="delete01"></include>
+                </methods>
+            </class>
+
+
+
+        </classes>
+
+    </test>
+</suite>
+
